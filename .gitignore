@@ -9,3 +9,6 @@ build/
 
 *.zip
 *.wav
+*.bert.pt
+logs/
+bundled/

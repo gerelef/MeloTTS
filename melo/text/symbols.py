@@ -229,7 +229,7 @@ es_symbols = [
     ]
 num_es_tones = 1
 
-# French 
+# French
 fr_symbols = [
     "\u0303",
     "œ",
@@ -242,14 +242,14 @@ fr_symbols = [
 ]
 num_fr_tones = 1
 
-# German 
+# German
 de_symbols = [
     "ʏ",
     "̩"
   ]
 num_de_tones = 1
 
-# Russian 
+# Russian
 ru_symbols = [
     "ɭ",
     "ʲ",
@@ -261,21 +261,27 @@ ru_symbols = [
 ]
 num_ru_tones = 1
 
+# Greek
+gr_symbols = [ "a", "v", "ɣ", "ð", "e", "z", "i", "θ", "i", "k", "l", "m", "n", "ks", "o", "p", "r", "s", "t", "u", "f",
+               "x", "ps", "o", "á", "é", "í", "í", "ó", "ú", "ó", "ai", "au", "ei", "eu", "oi", "ou", "ui" ]
+num_gr_tones = 1
+
 # combine all symbols
-normal_symbols = sorted(set(zh_symbols + ja_symbols + en_symbols + kr_symbols + es_symbols + fr_symbols + de_symbols + ru_symbols))
+normal_symbols = sorted(set(zh_symbols + ja_symbols + en_symbols + kr_symbols + es_symbols + fr_symbols + de_symbols + ru_symbols + gr_symbols))
 symbols = [pad] + normal_symbols + pu_symbols
 sil_phonemes_ids = [symbols.index(i) for i in pu_symbols]
 
 # combine all tones
-num_tones = num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones + num_fr_tones + num_de_tones + num_ru_tones
+num_tones = num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones + num_es_tones + num_fr_tones + num_de_tones + num_ru_tones + num_gr_tones
 
 # language maps
-language_id_map = {"ZH": 0, "JP": 1, "EN": 2, "ZH_MIX_EN": 3, 'KR': 4, 'ES': 5, 'SP': 5 ,'FR': 6}
+language_id_map = {"ZH": 0, "JP": 1, "EN": 2, "ZH_MIX_EN": 3, 'KR': 4, 'ES': 5, 'SP': 5 ,'FR': 6, "GR": 7}
 num_languages = len(language_id_map.keys())
 
 language_tone_start_map = {
     "ZH": 0,
     "ZH_MIX_EN": 0,
+    "GR": num_gr_tones,
     "JP": num_zh_tones,
     "EN": num_zh_tones + num_ja_tones,
     'KR': num_zh_tones + num_ja_tones + num_en_tones,
