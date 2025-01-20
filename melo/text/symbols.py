@@ -262,8 +262,7 @@ ru_symbols = [
 num_ru_tones = 1
 
 # Greek
-gr_symbols = [ "a", "v", "ɣ", "ð", "e", "z", "i", "θ", "i", "k", "l", "m", "n", "ks", "o", "p", "r", "s", "t", "u", "f",
-               "x", "ps", "o", "á", "é", "í", "í", "ó", "ú", "ó", "ai", "au", "ei", "eu", "oi", "ou", "ui" ]
+gr_symbols = ['a', 'ai', 'au', 'e', 'ei', 'eu', 'i', 'ks', 'o', 'oi', 'ou', 'ps', 'u', 'ui', 'v', 'x', 'á', 'é', 'í', 'ð', 'ó', 'ú', 'ɣ', 'θ']
 num_gr_tones = 1
 
 # combine all symbols
@@ -291,6 +290,6 @@ language_tone_start_map = {
 }
 
 if __name__ == "__main__":
-    a = set(zh_symbols)
+    a = set(gr_symbols)
     b = set(en_symbols)
-    print(sorted(a & b))
+    print(sorted(a - b))
